@@ -1,10 +1,8 @@
 ACLOCAL_AMFLAGS = -I m4
 
-MI=0
-
 AM_CPPFLAGS = -Wall
 AM_CFLAGS	= -mthumb \
-			  -mcpu=cortex-m$(MI) \
+			  -mcpu=cortex-m0 \
 			  -Os -flto \
 			  -ffunction-sections -fdata-sections
 AM_CXXFLAGS =
@@ -17,7 +15,7 @@ AM_LDFLAGS	= \
 
 noinst_PROGRAMS = fpin
 fpin_SOURCES = ./src/fpin.c \
-			   ./src/asm/startup_ARMCM$(MI).S
+			   ./src/asm/startup_ARMCM0.S
 
 fpin_LDFLAGS = $(AM_LDFLAGS)
 
